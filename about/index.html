@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>Hugo基础指南 | adekang</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="1. 安装 Hugo 🔗从 Hugo 项目主页下载 Releases 文件，解压 hugo.exe 文件到 C:\Windows\System32 目录下。
+2. 创建站点 🔗hugo new site mysite 新的站点文件夹 mysite 就自动生成到了当前目录下：
+在执行完 hugo new site 命令后你会得到一个包含以下文件的目录。
+. ├── archetypes/ ├── config.toml ├── content/ # 储存网站的所有文章内容 ├── data/ ├── layouts/ # 全局样式，优先级高于主题下的 layouts 文件夹 ├── static/ # 静态文件，优先级高于主题下的 static 文件夹 └── themes/ # 主题目录 3. 新建页面和文章 🔗新建一个 about 页面：
+hugo new about.md about.md 自动生成到了 content/about.md，内容如下：
+--- title: &quot;About&quot; date: 2020-04-07T22:05:28&#43;08:00 draft: true --- 创建第一篇文章，放到 post 目录：">
+<meta name="generator" content="Hugo 0.88.1" />
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	<a href="/posts">Archive</a>
+	<a href="/tags">Tags</a>
+	<a href="/about">About</a>
+
+	
+
+	
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">Hugo基础指南</h1>
+
+    <div class="tip">
+        <time datetime="2021-11-02 10:00:02 &#43;0800 CST">Nov 2, 2021</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          146 words
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1 minute read
+        </span>
+    </div>
+
+    
+    
+
+
+    <div class="content">
+      <h2 id="1-安装-hugo">1. 安装 Hugo <a href="#1-%e5%ae%89%e8%a3%85-hugo" class="anchor">🔗</a></h2><p>从 Hugo 项目主页下载 Releases 文件，解压 <code>hugo.exe</code> 文件到 <code>C:\Windows\System32</code> 目录下。</p>
+<h2 id="2-创建站点">2. 创建站点 <a href="#2-%e5%88%9b%e5%bb%ba%e7%ab%99%e7%82%b9" class="anchor">🔗</a></h2><pre tabindex="0"><code>hugo new site mysite
+</code></pre><p>新的站点文件夹 mysite 就自动生成到了当前目录下：</p>
+<p>在执行完 <code>hugo new site</code> 命令后你会得到一个包含以下文件的目录。</p>
+<pre tabindex="0"><code>.
+├── archetypes/
+├── config.toml
+├── content/   # 储存网站的所有文章内容
+├── data/
+├── layouts/   # 全局样式，优先级高于主题下的 layouts 文件夹
+├── static/    # 静态文件，优先级高于主题下的 static 文件夹
+└── themes/    # 主题目录
+</code></pre><h2 id="3-新建页面和文章">3. 新建页面和文章 <a href="#3-%e6%96%b0%e5%bb%ba%e9%a1%b5%e9%9d%a2%e5%92%8c%e6%96%87%e7%ab%a0" class="anchor">🔗</a></h2><p><strong>新建一个 about 页面：</strong></p>
+<pre tabindex="0"><code>hugo new about.md
+</code></pre><p>about.md 自动生成到了 content/about.md，内容如下：</p>
+<pre tabindex="0"><code>---
+title: &quot;About&quot;
+date: 2020-04-07T22:05:28+08:00
+draft: true
+---
+</code></pre><p><strong>创建第一篇文章，放到 post 目录：</strong></p>
+<pre tabindex="0"><code>hugo new post/myfirst.md
+</code></pre><p>myfirst.md 自动生成到了 content/post/myfirst.md，内容如下：</p>
+<pre tabindex="0"><code>---
+title: &quot;Myfirst&quot;
+date: 2020-04-07T22:05:28+08:00
+draft: true
+---
+</code></pre><p>其中 draft: true 表示为草稿文件，正式发布前需将值修改为 false，或者直接删除 draft 整个参数，否则正式发布时不会生成文章。</p>
+<h2 id="4-安装主题">4. 安装主题 <a href="#4-%e5%ae%89%e8%a3%85%e4%b8%bb%e9%a2%98" class="anchor">🔗</a></h2><p>到 <a href="https://themes.gohugo.io/" target="_blank" rel="noopener">Hugo 主题列表</a> 或从 Github 下载一款主题，解压到 theme 目录下：</p>
+<ul>
+<li>通过命令行的方式使用主题：hugo -t 主题目录名</li>
+<li>通过在 config.toml 配置使用：theme = &ldquo;主题目录名&rdquo;</li>
+</ul>
+<h2 id="5-编译输出构建-hugo-网站">5. 编译输出（构建 Hugo 网站） <a href="#5-%e7%bc%96%e8%af%91%e8%be%93%e5%87%ba%e6%9e%84%e5%bb%ba-hugo-%e7%bd%91%e7%ab%99" class="anchor">🔗</a></h2><p>在 Hugo 网站文件夹的根目录下，执行 <code>hugo</code> 命令来构建。</p>
+<pre tabindex="0"><code>hugo
+</code></pre><p>编译输出的静态 HTML 文件，默认会保存到 <code>public</code> 目录。</p>
+<h2 id="6-启动实时预览本地预览网站效果">6. 启动实时预览（本地预览网站效果） <a href="#6-%e5%90%af%e5%8a%a8%e5%ae%9e%e6%97%b6%e9%a2%84%e8%a7%88%e6%9c%ac%e5%9c%b0%e9%a2%84%e8%a7%88%e7%bd%91%e7%ab%99%e6%95%88%e6%9e%9c" class="anchor">🔗</a></h2><p>写一篇文章生成一次会很繁琐，可以通过启动网站预览，实时监控页面的更改并刷新页面。</p>
+<pre tabindex="0"><code>hugo server -D
+</code></pre><p>参数： <code>-D</code> 输出包括标记为 draft: true 的草稿文章</p>
+<p>默认地址为 <code>http://localhost:1313</code> 如果 1313 端口被占用，会随机使用其他空端口。</p>
+
+    </div>
+
+    
+    
+    
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+
+    <div class="copyright">
+    
+       © Copyright 
+       2021 
+       <span class="split">
+        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
+  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
+</svg>
+       </span>
+       
+    
+    </div>
+
+    
+      <div class="powerby">
+        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-cactus-plus'>nodejh</a>
+      </div>
+    
+</footer>
+
+
+
+  </body>
+</html>
