@@ -11,8 +11,8 @@
 在执行完 hugo new site 命令后你会得到一个包含以下文件的目录。
 . ├── archetypes/ ├── config.toml ├── content/ # 储存网站的所有文章内容 ├── data/ ├── layouts/ # 全局样式，优先级高于主题下的 layouts 文件夹 ├── static/ # 静态文件，优先级高于主题下的 static 文件夹 └── themes/ # 主题目录 3. 新建页面和文章 🔗新建一个 about 页面：
 hugo new about.md about.md 自动生成到了 content/about.md，内容如下：
---- title: &quot;About&quot; date: 2020-04-07T22:05:28&#43;08:00 draft: true --- 创建第一篇文章，放到 post 目录：">
-<meta name="generator" content="Hugo 0.88.1" />
+--- title: &#34;About&#34; date: 2020-04-07T22:05:28&#43;08:00 draft: true --- 创建第一篇文章，放到 post 目录：">
+<meta name="generator" content="Hugo 0.99.1" />
 
 
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -90,7 +90,7 @@ hugo new about.md about.md 自动生成到了 content/about.md，内容如下：
 <pre tabindex="0"><code>hugo new about.md
 </code></pre><p>about.md 自动生成到了 content/about.md，内容如下：</p>
 <pre tabindex="0"><code>---
-title: &quot;About&quot;
+title: &#34;About&#34;
 date: 2020-04-07T22:05:28+08:00
 draft: true
 ---
@@ -98,7 +98,7 @@ draft: true
 <pre tabindex="0"><code>hugo new post/myfirst.md
 </code></pre><p>myfirst.md 自动生成到了 content/post/myfirst.md，内容如下：</p>
 <pre tabindex="0"><code>---
-title: &quot;Myfirst&quot;
+title: &#34;Myfirst&#34;
 date: 2020-04-07T22:05:28+08:00
 draft: true
 ---
@@ -128,26 +128,15 @@ draft: true
     </main>
     
     <footer id="footer">
-    
-
-    <div class="copyright">
-    
-       © Copyright 
-       2021 
-       <span class="split">
-        <svg fill="#bbbbbb" width="15" height="15" version="1.1" id="heart-15" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15">
-  <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"/>
-</svg>
-       </span>
-       
-    
-    </div>
-
-    
-      <div class="powerby">
-        Powered by <a href='http://www.gohugo.io/'>Hugo</a> Theme By <a href='https://github.com/nodejh/hugo-theme-cactus-plus'>nodejh</a>
-      </div>
-    
+   
+  
+  <div class="powerby">
+    © 2021-2022 adekang 版权所有
+    <a href="https://beian.miit.gov.cn/" target="_blank"
+      >蜀ICP备2021027923号-1</a
+    >
+  </div>
+  
 </footer>
 
 
